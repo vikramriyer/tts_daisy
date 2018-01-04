@@ -1,0 +1,35 @@
+Features to be done:-
+1. the session should be maintained so that on refresh, data is not lost
+2. image should be shown so that the user can tag by looking at it
+3. uploading the image should be done from server
+   3.1 during this process text as well as corresponding image should be rendered
+       from the web
+4. the data in the new editor should be stored on the disk/server if it becomes
+   huge or if there is a session refresh
+5. 500 page book, then user will not do it at once, partial sessions required.
+6. instead of storing the data on the editor, save it to db
+7. python script to remove the 'carriage returns' and other extra unwanted
+   characters
+8. admin user can add tags and attributes
+
+Annotator workflow:-
+1. annotator logs in
+2. enters the book name, all the pages in the book are fetched
+3. once done with one page, save it to db instead of next editor and
+   automatically fetch the next page
+4. once all part done, back to the book name search page
+5. sign up and login functionality
+
+
+DB models:-
+- editor2
+[bookname + username]
+- editor1 (mostly session data, no need to save to db)
+- users
+[user, password, email]
+- books
+[bookname, dateadded, username, status(active, finished)]
+- pages
+[bookname, pagenumber]
+- workinprogress
+[user + bookname, date]

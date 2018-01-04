@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+    body {
+        overflow: hidden;
+    }
+    #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'libraries/index_ace.css' %}">
+</head>
+<body>
+  <div class="container-fluid">
+      <div class="row">
+
+        <div id="col1" class="col-md-2">
+          <h4>Tags and Attributes</h4>
+          <div class="row">
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                  XML Tags
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">a</a></li>
+                  <li><a href="#">abbr</a></li>
+                  <li><a href="#">acronym</a></li>
+                </ul>
+              </div>
+          </div>
+          <div class="row">
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                  XML Attributes
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">accesskey</a></li>
+                  <li><a href="#">allign</a></li>
+                  <li><a href="#">alt</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+
+        <div id="col2" class="col-md-8">
+          <p></p>
+          <pre id="editor"></pre>
+
+             <!-- load ace -->
+          <script src="libraries/ace.js"></script>
+          <!-- load ace language_tools extension -->
+          <script src="{% static 'libraries/ext-language_tools.js' %}"></script>
+          <script>
+                 var langagueTools = require("ace/ext/language_tools");
+                 var editor = ace.edit("editor");
+                 editor.session.setMode("ace/mode/xml");
+                 editor.setTheme("ace/theme/tomorrow");
+                 document.getElementById('editor').style.fontSize='14px';
+
+                 // get text data from the database and add as content
+                 data_content = "I am a paragraph. I am not fetched from db. "
+                 editor.setValue(data_content)
+
+                 editor = document.getElementById('editor')
+                 scroller = new ScrollBar(editor)
+          </script>
+        </div>
+
+        <div id="col3" class="col-md-2">
+          <h4>Original Image</h4>
+        </div>
+
+      </div>
+    </div>
+
+
+  <!-- REFERENCES
+    http://www.daisy.org/z3986/structure/SG-DAISY3/index-of-elements.html
+    http://www.daisy.org/z3986/structure/SG-DAISY3/part1.html
+  -->
+</body>
+</html>

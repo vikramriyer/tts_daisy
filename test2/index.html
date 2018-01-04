@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to daisy app!</title>
+  </head>
+  <body>
+    <div class="container jumbotron" style="width: 100%">
+      <div class="row"  style="width: 100%">
+        <form action="pre_editor.html" method="post"  style="width: 100%" enctype="multipart/form-data">
+          <h4>Enter the Book Name and Upload all the pages in the book. </h4>
+          <div class="form-group" style="width: 40%">
+            <input type="text" class="form-control input-sm" style="width: 100%" placeholder="Enter book/doc name here">
+          </div>
+          <div class="form-group"  style="width: 40%">
+            <div class="input-group input-file">
+              <input type="text" class="form-control" placeholder='Choose a file...'/>
+              <span class="input-group-btn">
+              <button class="btn btn-default btn-choose" type="button">Browse</button>
+              </span>
+            </div>
+          </div>
+          <p></p>
+          <div class="col-sm-12" style="margin-bottom:20px;">
+          <label class="btn-bs-file btn btn-lg btn-primary">
+            Browse
+            <input type="file" multiple/>
+        </label>
+        </div>
+          <p></p>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary pull-right" disabled>Submit</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="http://www.expertphp.in/js/jquery.form.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+  </body>
+</html>
+<!--
+  References:
+  https://www.aspsnippets.com/Articles/HTML5-Show-Display-multiple-image-preview-before-upload-with-FileUpload-control-using-JavaScript-and-jQuery.aspx
+  https://bootsnipp.com/snippets/B2yPB
+  https://codepen.io/Sebus059/pen/MwMQbP
+  https://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp
+
+
+  -->

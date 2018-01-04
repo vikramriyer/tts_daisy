@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>welcome</title>
+  </head>
+  <body>
+    <form class="" action="editor.html" method="post">
+      {% csrf_token %}
+      <input type="text" name="textfield" placeholder="enter text required to send to tts">
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </body>
+</html>

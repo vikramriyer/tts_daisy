@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Daisy XML editor</title>
+  </head>
+  <body>
+    <div class="container-fluid jumbotron">
+      <div class="row">
+        <div class="col-lg-2" id="col1">
+          <div class="row inner_row" style="height: 8%">
+            <!--button type="button" id="uploadFile" name="button" class="btn btn-primary">Upload File
+            </button-->
+            <input type="file" id="uploadFile" name="files[]"/>
+          </div>
+          <p></p>
+          <div class="row inner_row" style="height: 8%">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">TAGS
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu ul_tags">
+                <li class="ul_tags"><a href="#">dtbook</a></li>
+                <li class="ul_tags"><a href="#">head</a></li>
+                <li class="ul_tags"><a href="#">meta</a></li>
+                <li class="ul_tags"><a href="#">level1</a></li>
+                <li class="ul_tags"><a href="#">doctitle</a></li>
+                <li class="ul_tags"><a href="#">docauthor</a></li>
+                <li class="ul_tags"><a href="#">frontmatter</a></li>
+                <li class="ul_tags"><a href="#">200d</a></li>
+                <li class="ul_tags"><a href="#">pagenum</a></li>
+                <li class="ul_tags"><a href="#">h1</a></li>
+                <li class="ul_tags"><a href="#">p</a></li>
+              </ul>
+            </div>
+          </div>
+          <p></p>
+          <div class="row inner_row">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">ATTRIBUTES
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li class="ul_attribs"><a href="#">id</a></li>
+                <li class="ul_attribs"><a href="#">page</a></li>
+                <li class="ul_attribs"><a href="#">xmlns</a></li>
+                <li class="ul_attribs"><a href="#">content</a></li>
+                <li class="ul_attribs"><a href="#">name</a></li>
+                <li class="ul_attribs"><a href="#">version</a></li>
+                <li class="ul_attribs"><a href="#">class</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5" id="col2" style="padding-right:20px; border-right: 5px solid #ccc;">
+          <div id="editor"></div>
+        </div>
+        <div class="col-lg-1">
+          <button class="btn btn-primary" title="Add the edited xml to the editor on the right. "
+          id="appendData" type="button" name="button"> ==>> </button>
+        </div>
+        <div class="col-lg-4" id="col3">
+          <div id="editors"></div>
+        </div>
+      </div>
+      <p></p>
+      <div class="row" style="height: 15%">
+        <div class="col-lg-8">
+        </div>
+        <div class="col-lg-1">
+          <button type="button" title="Check if you xml is valid. " name="button" class="btn btn-primary">Validate XML
+          </button>
+        </div>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-1">
+          <button type="button" title="Convert the xml to daisy book using daisy pipeline. " name="button"
+          class="btn btn-primary">Convert
+          </button>
+        </div>
+      </div>
+    </div>
+    <link rel="stylesheet" href="editor.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="editor.js"></script>
+  </body>
+</html>
+<!--
+References::
+https://codepen.io/Sebus059/pen/MwMQbP
+https://jsfiddle.net/jasny/vtGxm/
+https://jsfiddle.net/deepumohanp/tGF6y/
+https://www.html5rocks.com/en/tutorials/file/dndfiles/
+https://stackoverflow.com/questions/14446447/how-to-read-a-local-text-file
+https://stackoverflow.com/questions/3582671/how-to-open-a-local-disk-file-with-javascript
+
+-->

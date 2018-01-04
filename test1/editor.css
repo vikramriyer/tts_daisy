@@ -1,0 +1,31 @@
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#editors {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.row{
+  height: 100%;
+}
+
+.container-fluid{
+  height: 100%;
+}
+
+.inner_row{
+  height: 50%;
+}

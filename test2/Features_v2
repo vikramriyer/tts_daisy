@@ -1,0 +1,63 @@
+Objects
+  Books
+    fields:
+      book_name = Name of the book, unique
+      user_name = User who uploaded the book
+      date_added = Date the book was added, Date
+      publish_date = Date the book was published, Date
+      status = The current status of the book whether inactive, active, complete
+      description = About the book, optional
+      last_accessed = Used to find the incomplete books, Date
+
+    methods:
+      upload_book(book_name)
+      publish(book_name)
+      show_incomplete_books(user_name)
+      load_incomplete_book(user_name, book_name)
+      delete_book(book_name) => cascading effect on Pages
+
+  Pages
+    fields:
+      book_name: Name of the book, foreign key -> Books
+      page_number: The page number in the book 'book_name', not null auto inr
+      text: OCR generated text
+      image: The image whose text is generated
+
+    methods:
+      upload_pages(book_name, page(s))
+      load_next_page(page_number)
+
+
+  Users
+    inherited from auth.User in Django
+
+Utility methods
+ - run command line to run daisy pipeline
+ - validate the custom daisy xml
+ - remove the extra white spaces
+ - validations for each of the fields in the objects
+
+VIews (UI html pages)
+ - index.html (HomePageView)
+    This page will show the user all the incomplete books with 10 as max
+    per page. User can choose any book using a radio button and head over to
+    editor.html to start editing from the page where he left.
+ - editor.html (EditorView)
+    Editor page where the user will annotate the pages and run daisy pipeline
+    from web ui
+ - login.html
+ - logout.html
+ - signup.html
+
+Release Versions
+v1 (offline)
+- upload image and text, annotate and run daisy pipeline
+
+v2 (online hereafter)
+- db models used to store data
+
+v3
+- loading half left books
+
+v4
+- API call to get OCR data rather than uploading from disk

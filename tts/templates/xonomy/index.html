@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>welcome</title>
+    <link rel="stylesheet" href="{% static 'libraries/bootstrap.min.css' %}">
+    <script src="{% static 'libraries/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libraries/jquery.min.js' %}"></script>
+  </head>
+  <body>
+    <form class="" action="editor.html" method="post">
+      <input type="text" name="textfield" placeholder="enter text required to send to tts">
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </body>
+</html>
